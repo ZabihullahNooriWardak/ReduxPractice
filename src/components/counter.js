@@ -2,17 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
 import { increment } from "../store/counterSlice";
-function Counter(){
-    const dispatch=useDispatch();
-    // let total=useSelector(state=>state.initNumber);
-    let total = useSelector(state=>state.counter.initNumber)
-    function handleClikc(){
-    //   dispatch({type: 'increment'})
-    dispatch(increment())
+function Counter() {
+    const dispatch = useDispatch();
+    let total = useSelector(state => state.counter.initNumber)
+    function handleClikc() {
+        dispatch(increment())
     }
-    function decrement(){
-// dispatch({type:'decrement'})
-console.log('decrement function called..........................')
+    function decrement() {
+        console.log('decrement function called..........................')
     }
     return <div>
         <h1>Counter app</h1>
@@ -21,4 +18,4 @@ console.log('decrement function called..........................')
         <button onClick={decrement}>-</button>
     </div>
 }
-export {Counter};
+export { Counter };
