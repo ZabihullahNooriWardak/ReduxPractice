@@ -10,6 +10,11 @@ const reducer =( state=initialData,action)=>{
         ...state,initNumber:state.initNumber+=1,
     }
   }
+  if(action.type==='decrement'){
+    return{
+      ...state,initNumber:state.initNumber-=1
+    }
+  }
     return state;
 }
 

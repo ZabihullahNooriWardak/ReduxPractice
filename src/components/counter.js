@@ -9,7 +9,7 @@ function Counter(){
       dispatch({type: 'increment'})
     }
     function decrement(){
-
+dispatch({type:'decrement'})
     }
     return <div>
         <h1>Counter app</h1>
