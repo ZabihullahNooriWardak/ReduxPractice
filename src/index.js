@@ -9,7 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const store = configureStore({
     reducer:{
-        counterReducer
+        // counterReducer
+        counter: counterReducer
     }
 })
 root.render(

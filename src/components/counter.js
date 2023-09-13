@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import { increment } from "../store/counterSlice";
 function Counter(){
     const dispatch=useDispatch();
-    let total=useSelector(state=>state.initNumber);
+    // let total=useSelector(state=>state.initNumber);
+    let total = useSelector(state=>state.counter.initNumber)
     function handleClikc(){
     //   dispatch({type: 'increment'})
     dispatch(increment())
