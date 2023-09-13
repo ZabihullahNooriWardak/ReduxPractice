@@ -7,7 +7,7 @@ const initialData = {
 const reducer =( state=initialData,action)=>{
   if(action.type==='increment'){
     return {
-        ...state,initNumber:action.payLoad
+        ...state,initNumber:state.initNumber+=1,
     }
   }
     return state;

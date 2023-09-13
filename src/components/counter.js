@@ -6,8 +6,7 @@ function Counter(){
     const dispatch=useDispatch();
     let total=useSelector(state=>state.initNumber);
     function handleClikc(){
-        let t=++total;
-      dispatch({type: 'increment',payLoad:t})
+      dispatch({type: 'increment'})
     }
     function decrement(){
 
