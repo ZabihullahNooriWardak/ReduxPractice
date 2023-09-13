@@ -1,21 +1,30 @@
 import React from "react";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import { useDispatch } from "react-redux";
-import { increment } from "../store/counterSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../store/counterSlice";
+import "./Counter.css"; // Import your CSS file for styling
+
 function Counter() {
     const dispatch = useDispatch();
-    let total = useSelector(state => state.counter.initNumber)
-    function handleClikc() {
-        dispatch(increment())
+    let total = useSelector(state => state.counter.initNumber);
+
+    function handleIncrement() {
+        dispatch(increment());
     }
-    function decrement() {
-        console.log('decrement function called..........................')
+
+    function handleDecrement() {
+        dispatch(decrement());
     }
-    return <div>
-        <h1>Counter app</h1>
-        <button onClick={handleClikc}>+</button>
-        <p>the counter value is :{total}</p>
-        <button onClick={decrement}>-</button>
-    </div>
+
+    return (
+        <div className="counter-container">
+            <h1 className="counter-heading">Counter App</h1>
+            <div className="counter">
+                <button className="counter-button" onClick={handleDecrement}>-</button>
+                <p className="counter-value">Counter Value: {total}</p>
+                <button className="counter-button" onClick={handleIncrement}>+</button>
+            </div>
+        </div>
+    );
 }
+
 export { Counter };
